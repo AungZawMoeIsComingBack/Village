@@ -7,6 +7,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Profile extends Model
 {
+    protected $fillable = [
+        'user_id',
+        'bio',
+        'profile_image',
+        'date_of_birth',
+        'gender',
+    ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

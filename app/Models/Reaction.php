@@ -7,9 +7,19 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Reaction extends Model
 {
+    protected $fillable = [
+        'post_id',
+        'user_id',
+        'type',
+    ];
+
     public function post(): BelongsTo
     {
         return $this->belongsTo(Post::class);
     }
-}
 
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+}
